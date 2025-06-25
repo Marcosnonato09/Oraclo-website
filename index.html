@@ -5,28 +5,29 @@
   <title>Oraclo - Art that speaks to you</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* Estilos para o corpo da página e a imagem de fundo */
     html, body {
       height: 100%;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
+      font-family: 'Arial', sans-serif; /* Mantendo sua fonte original */
+      /* overflow: hidden; -- Removido para evitar problemas de rolagem com conteúdo */
+
+      /* Configuração da imagem de fundo */
+      background-image: url("background.jpg"); /* Caminho para sua imagem no repositório */
+      background-size: cover; /* Garante que a imagem cubra toda a área */
+      background-position: center center; /* Centraliza a imagem */
+      background-repeat: no-repeat; /* Evita repetição da imagem */
+      background-attachment: fixed; /* Efeito parallax (imagem fixa ao rolar) */
+      background-color: #333; /* Cor de fallback caso a imagem não carregue */
     }
 
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
+    /* Estilos para o overlay sobre a imagem de fundo */
     .overlay {
       position: relative;
       height: 100%;
@@ -36,30 +37,35 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.85);
+      /* Fundo semi-transparente para permitir que a imagem apareça e melhorar a legibilidade do texto */
+      background-color: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade (último valor) conforme necessário */
       padding: 2rem;
     }
 
+    /* Estilos para o logo */
     .logo {
       max-width: 200px;
       margin-bottom: 2rem;
     }
 
+    /* Estilos para o título */
     h1 {
       font-size: 2.5rem;
-      color: #333;
+      color: #fff; /* Alterado para branco para melhor contraste com o overlay escuro */
       margin-bottom: 1rem;
     }
 
+    /* Estilos para o parágrafo */
     p {
       font-size: 1.1rem;
-      color: #555;
+      color: #ddd; /* Alterado para cinza claro para melhor contraste */
       max-width: 600px;
       margin-bottom: 2rem;
     }
 
+    /* Estilos para links */
     a {
-      color: #0077cc;
+      color: #61dafb; /* Cor de link para bom contraste */
       text-decoration: none;
       font-weight: bold;
     }
@@ -71,17 +77,11 @@
 </head>
 <body>
 
-  <!-- Vídeo de fundo -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="oraclo_intro.mp4" type="video/mp4">
-    Seu navegador não suporta vídeo HTML5.
-  </video>
-
   <!-- Conteúdo sobreposto -->
   <div class="overlay">
     <img src="logo.png" alt="Oraclo Logo" class="logo" />
     <h1>Welcome to Oraclo</h1>
-    <p>Art that speaks to you. Controle seus dispositivos inteligentes com estilo. Coming soon!</p>
+    <p>Art that speaks to you. Coming soon!</p>
     <p><a href="privacy.html">Read our Privacy Policy</a></p>
   </div>
 
