@@ -43,9 +43,14 @@
     }
 
     /* Estilos para o logo */
+    /* Estilos para o logo - POSICIONADO NO CANTO SUPERIOR ESQUERDO */
     .logo {
-      max-width: 200px;
-      margin-bottom: 2rem;
+      position: absolute; /* Posição absoluta em relação ao .overlay */
+      top: 2rem; /* Distância do topo */
+      left: 2rem; /* Distância da esquerda */
+      max-width: 150px; /* Reduzi o tamanho máximo para se adequar ao canto */
+      margin-bottom: 0; /* Remove a margem inferior anterior */
+      z-index: 10; /* Garante que o logo esteja acima de outros conteúdos se houver */
     }
 
     /* Estilos para o título */
